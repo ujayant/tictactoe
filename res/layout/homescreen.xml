@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:orientation="vertical"
+    android:background="#96C03E">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:lines="1"
+        android:text="@string/title_homescreen"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center" />
+        
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/one_player" 
+        android:layout_gravity="center"
+        android:onClick="onePlayer" />
+        
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/two_player" 
+        android:layout_gravity="center"
+        android:onClick="twoPlayer" />
+        
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/settings" 
+        android:layout_gravity="center"
+        android:onClick="settings" />
+        
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/about" 
+        android:layout_gravity="center"
+        android:onClick="about" />
+
+</LinearLayout>                 
