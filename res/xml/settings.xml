@@ -5,6 +5,7 @@
 	<CheckBoxPreference
 	    android:title="@string/vibrate"
 	    android:enabled="true"
+	    android:defaultValue="true"
 	    android:summary="@string/ttt_settings_vibrate_summary"
 	    android:key="vibrate" />
 

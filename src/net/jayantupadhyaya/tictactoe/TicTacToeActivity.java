@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import net.jayantupadhyaya.tictactoe.App;
 
 public class TicTacToeActivity extends Activity {
 	private static int MAX_BLOCKS = 9;
@@ -69,7 +70,11 @@ public class TicTacToeActivity extends Activity {
 					if (moves[position] == 0) {
 						moves[position] = curPlayer;
 						Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-						vibrator.vibrate(150);
+						if(App.CHECK_PREF == true) {
+							vibrator.vibrate(150);
+						} else {
+							vibrator.vibrate(0);
+						}
 						((TextView) view).setTextColor(curMarker == "X" ? Color.BLACK : Color.RED);
 						((TextView) view).setText(curMarker);
 
