@@ -13,7 +13,7 @@ public class SettingsActivity extends PreferenceActivity
 		super.onCreate(savedInstanceState);
 
 		PreferenceManager prefMgr = getPreferenceManager();
-		prefMgr.setSharedPreferencesName(App.CONFIG_NAME);
+		prefMgr.setSharedPreferencesName(App.SETTINGS);
 		prefMgr.setSharedPreferencesMode(MODE_PRIVATE);
 
 		addPreferencesFromResource(R.xml.settings);

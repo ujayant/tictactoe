@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/settings_option"
+          android:icon="@drawable/ic_settings_141_32_invert"
+          android:title="@string/ttt_settings" />
+</menu>	

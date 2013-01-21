@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
 public class App {
 	private static Context ctx = null;
 
-	public static final String CONFIG_NAME = "config";
+	public static final String SETTINGS = "settings";
 
 	private App() {}
 
@@ -18,7 +18,7 @@ public class App {
 		if (ctx == null) {
 			ctx = appContext;
 
-			SharedPreferences prefs = ctx.getSharedPreferences(CONFIG_NAME, Context.MODE_PRIVATE);
+			SharedPreferences prefs = ctx.getSharedPreferences(SETTINGS, Context.MODE_PRIVATE);
 			CHECK_PREF = prefs.getBoolean("vibrate", true);
 		}
 
