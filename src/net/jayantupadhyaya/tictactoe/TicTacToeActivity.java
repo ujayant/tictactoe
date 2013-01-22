@@ -32,7 +32,7 @@ public class TicTacToeActivity extends Activity {
 	//For saving the states
 	private SharedPreferences states;
 	private String statePref = "StatesPref";
-	
+
 	private static String MOVE_COUNT;
 	private static String MOVES_ARRAY;
 	private static String MOVES_ARRAY_LENGTH;
@@ -91,12 +91,12 @@ public class TicTacToeActivity extends Activity {
 		super.onSaveInstanceState(savedInstanceState);
 
 		moveCount = savedInstanceState.getInt(MOVE_COUNT);
-        moves = savedInstanceState.getIntArray(MOVES_ARRAY);
-        curPlayer = savedInstanceState.getInt(CURRENT_PLAYER);
-        curMarker = savedInstanceState.getString(CURRENT_MARKER);
-        sums = savedInstanceState.getIntArray(SUMS_ARRAY);
-        gameOver = savedInstanceState.getBoolean(GAME_OVER);
-        App.CHECK_PREF = savedInstanceState.getBoolean(CHECK_PREF);
+		moves = savedInstanceState.getIntArray(MOVES_ARRAY);
+		curPlayer = savedInstanceState.getInt(CURRENT_PLAYER);
+		curMarker = savedInstanceState.getString(CURRENT_MARKER);
+		sums = savedInstanceState.getIntArray(SUMS_ARRAY);
+		gameOver = savedInstanceState.getBoolean(GAME_OVER);
+		App.CHECK_PREF = savedInstanceState.getBoolean(CHECK_PREF);
 	}
 
 	@Override
@@ -112,7 +112,7 @@ public class TicTacToeActivity extends Activity {
 			case R.id.settings_option:
 				 startActivity(new Intent(this, SettingsActivity.class));
 				 return true;
-					 
+
 			default:
 				return super.onOptionsItemSelected(item);
 		}
@@ -199,9 +199,9 @@ public class TicTacToeActivity extends Activity {
 					}
 				}
 			}
-		});    
+		});
 	}
-	
+
 	@Override
 	public void onPause() {
 		super.onPause();
@@ -216,25 +216,25 @@ public class TicTacToeActivity extends Activity {
 		editor.putInt("SUMS_ARRAY_LENGTH", sums.length);
 		editor.putString("SUMS_ARRAY", arraytoString(sums));
 		editor.putBoolean("GAME_OVER", gameOver);
-		
+
 		editor.commit();
 	}
-	
+
 	@Override
 	public void onResume() {
 		super.onResume();
-		
+
 		String str;
 
 		states = getSharedPreferences(statePref, MODE_PRIVATE);
-        moveCount = states.getInt("MOVE_COUNT", 0);
-        str = states.getString("MOVES_ARRAY", arraytoString(moves));
+		moveCount = states.getInt("MOVE_COUNT", 0);
+		str = states.getString("MOVES_ARRAY", arraytoString(moves));
 		moves = toIntArray(str);
-        curPlayer = states.getInt("CURRENT_PLAYER", 2);
-        curMarker = states.getString("CURRENT_MARKER", "X");
+		curPlayer = states.getInt("CURRENT_PLAYER", 2);
+		curMarker = states.getString("CURRENT_MARKER", "X");
 		str = states.getString("SUMS_ARRAY", arraytoString(sums));
 		sums = toIntArray(str);
-        gameOver = states.getBoolean("GAME_OVER", false);
+		gameOver = states.getBoolean("GAME_OVER", false);
 	}
 
     public String arraytoString(int[] array) {
@@ -248,7 +248,7 @@ public class TicTacToeActivity extends Activity {
 
     public int[] toIntArray(String str) {
 		String[] sp =  str.split(",");
-        int[] array = new int[sp.length];
+		int[] array = new int[sp.length];
 		int i = 0;
 		for (String s : sp) {
 			array[i++] = Integer.parseInt(s);
@@ -256,7 +256,7 @@ public class TicTacToeActivity extends Activity {
 
 		return array;
 	}
-        
+
 	public class BlockAdapter extends ArrayAdapter<TextView> {
 		private LayoutInflater mInflater;
 
