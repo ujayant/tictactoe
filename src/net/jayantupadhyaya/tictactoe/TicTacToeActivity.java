@@ -237,16 +237,16 @@ public class TicTacToeActivity extends Activity {
 		gameOver = states.getBoolean("GAME_OVER", false);
 	}
 
-    public String arraytoString(int[] array) {
-        StringBuilder str = new StringBuilder();
-        for (int i = 0; i < array.length; i++) {
+	public String arraytoString(int[] array) {
+		StringBuilder str = new StringBuilder();
+		for (int i = 0; i < array.length; i++) {
 			str.append(array[i]).append(",");
-        }
+		}
 
-        return str.toString();
-    }
+		return str.toString();
+	}
 
-    public int[] toIntArray(String str) {
+	public int[] toIntArray(String str) {
 		String[] sp =  str.split(",");
 		int[] array = new int[sp.length];
 		int i = 0;
