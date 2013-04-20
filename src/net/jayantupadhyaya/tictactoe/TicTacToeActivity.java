@@ -8,7 +8,6 @@ import android.content.SharedPreferences.Editor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,11 +17,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.Map;
 
 import net.jayantupadhyaya.tictactoe.App;
 
@@ -71,6 +66,12 @@ public class TicTacToeActivity extends Activity {
 		}
 		gameOver = false;
 		gameStatus.setText(curMarker + "'s turn");
+	}
+
+	@Override
+	public void onBackPressed() {
+		reset(null);
+		finish();
 	}
 
 	@Override
@@ -143,7 +144,7 @@ public class TicTacToeActivity extends Activity {
 						} else {
 							vibrator.vibrate(0);
 						}
-						((TextView) view).setTextColor(curMarker == "X" ? Color.BLACK : Color.RED);
+						((TextView) view).setTextColor(curPlayer == 2 ? Color.BLACK : Color.RED);
 						((TextView) view).setText(curMarker);
 
 						r = position / 3;
